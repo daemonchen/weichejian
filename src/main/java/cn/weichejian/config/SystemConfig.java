@@ -2,6 +2,7 @@ package cn.weichejian.config;
 
 import cn.weichejian.model.User;
 import cn.weichejian.web.controller.HelloController;
+import cn.weichejian.web.controller.TextController;
 
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.wall.WallFilter;
@@ -17,6 +18,12 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.druid.DruidStatViewHandler;
 import com.jfinal.render.ViewType;
 
+//public class FrontRoutes extends Routes {
+//	public void config() {
+//		add("/", IndexController.class);
+//		add("/blog", BlogController.class);
+//		}
+//}
 public class SystemConfig extends JFinalConfig {
 	public void configConstant(Constants me) {
 		me.setDevMode(true);
@@ -25,6 +32,7 @@ public class SystemConfig extends JFinalConfig {
 
 	public void configRoute(Routes me) {
 		me.add("/hello", HelloController.class);
+		me.add("/text", TextController.class);
 	}
 
 	public void configPlugin(Plugins me) {

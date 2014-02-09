@@ -6,13 +6,7 @@
   <meta name="description" content="A layout example that shows off a responsive pricing table.">
   <title>Wei Che Jian</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
-  <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
-  
-    <link rel="stylesheet" type="text/css" href="/public//css/main.css">
-  
-    
-    
-        <link rel="stylesheet" href="http://purecss.io/combo/1.9.5?/css/main-grid.css&/css/layouts/pricing.css">
+  <link rel="stylesheet" href="http://purecss.io/combo/1.9.5?/css/main-grid.css&/css/layouts/pricing.css">
     
 
 </head>

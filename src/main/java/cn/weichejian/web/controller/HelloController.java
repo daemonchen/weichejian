@@ -10,6 +10,7 @@ import com.jfinal.plugin.activerecord.Page;
 public class HelloController extends Controller {
 	public void index() {
 		this.setAttr("test", new String[]{"ji"});
+//		 response.setCharacterEncoding("utf-8");
 		this.render("index.jsp");
 		List<User> users = User.dao.find("select * from t_mem_member where id=?", 10);
 //		User user1 = User.dao.findById(105);
