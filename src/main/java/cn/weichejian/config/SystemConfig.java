@@ -1,7 +1,7 @@
 package cn.weichejian.config;
 
 import cn.weichejian.model.User;
-import cn.weichejian.web.controller.HelloController;
+import cn.weichejian.web.controller.IndexController;
 import cn.weichejian.web.controller.TextController;
 
 import com.alibaba.druid.filter.stat.StatFilter;
@@ -31,7 +31,7 @@ public class SystemConfig extends JFinalConfig {
 	}
 
 	public void configRoute(Routes me) {
-		me.add("/hello", HelloController.class);
+		me.add("/index", IndexController.class);
 		me.add("/text", TextController.class);
 	}
 
@@ -48,7 +48,7 @@ public class SystemConfig extends JFinalConfig {
 		// ActiveRecordPlugin
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
 		arp.setContainerFactory(new CaseInsensitiveContainerFactory(true));
-		arp.addMapping("t_mem_member", User.class);
+		arp.addMapping("t_user", User.class);
 		me.add(arp);
 	}
 

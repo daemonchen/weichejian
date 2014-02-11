@@ -30,7 +30,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html;charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,6 +41,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\r\n");
       out.write("<!doctype html>\r\n");
       out.write("<html lang=\"en\">\r\n");
       out.write("<head>\r\n");
@@ -80,7 +81,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<div class=\"banner\">\r\n");
       out.write("    <h1 class=\"banner-head\">\r\n");
-      out.write("        å¾®è½¦é´<br>\r\n");
+      out.write("        微车间<br>\r\n");
       out.write("        Try before you buy.\r\n");
       out.write("    </h1>\r\n");
       out.write("</div>\r\n");

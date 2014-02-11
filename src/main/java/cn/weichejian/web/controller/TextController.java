@@ -13,6 +13,6 @@ public class TextController extends Controller {
 	}
 	
 	public void text(){
-		this.renderText("text result");
+		this.renderText("text resultºº×Ö");
 	}
 }
