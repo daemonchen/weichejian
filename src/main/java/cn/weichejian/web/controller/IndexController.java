@@ -13,6 +13,7 @@ public class IndexController extends Controller {
 //		 response.setCharacterEncoding("utf-8");
 		this.render("index.jsp");
 		List<User> users = User.dao.find("select * from t_user where id=?", 10);
+//		new User().set("login_name", "cgyqqcgy").set("password", "00o0o00oo00o0o").save();
 //		User user1 = User.dao.findById(105);
 //		System.out.println(user1.get("email"));
 //		System.out.println(users.size());
