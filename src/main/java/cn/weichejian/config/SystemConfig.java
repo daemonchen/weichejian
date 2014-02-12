@@ -1,6 +1,7 @@
 package cn.weichejian.config;
 
 import cn.weichejian.model.User;
+import cn.weichejian.web.controller.AccountsController;
 import cn.weichejian.web.controller.IndexController;
 import cn.weichejian.web.controller.TextController;
 
@@ -32,6 +33,7 @@ public class SystemConfig extends JFinalConfig {
 
 	public void configRoute(Routes me) {
 		me.add("/index", IndexController.class);
+		me.add("/accounts", AccountsController.class);
 		me.add("/text", TextController.class);
 	}
 

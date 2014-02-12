@@ -7,17 +7,13 @@
   <meta name="description" content="wei che jian.">
   <title>Wei Che Jian</title>
   <link rel="shortcut icon" type="image/png" href="public/images/logo.ico">
-  <link rel="stylesheet" href="public/css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="public/css/main.css">
-
-    
-
+  <link rel="stylesheet" href="public/css/index.css" type="text/css" />
 </head>
 <body class="landing site">
 
 <div class="navbar">
     <div class="container">
-        <a class="navbar-brand" href="/"><img src="public/images/logo.png" width="48" alt="Inc"></a>
+        <a class="navbar-brand" href="/"><img src="/public/images/logo.png" width="48" alt="Inc"></a>
         <ul class="nav navbar-nav">
             <li><a href="/features/" class="nav-features">主页</a></li>
             <li><a href="/pricing/" class="nav-pricing">案例</a></li>

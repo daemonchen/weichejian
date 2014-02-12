@@ -1701,7 +1701,7 @@ a:hover {
 }
 #pricing {
 	padding: 60px 0 0;
-	background: url(../images/header-bg.jpg) center -720px no-repeat;
+	background: url(/public/images/header-bg.jpg) center -720px no-repeat;
 	background-size: cover
 }
 #pricing header {
@@ -1845,7 +1845,7 @@ body.landing header {
 	position: relative
 }
 body.landing header .bg {
-	background: url(../images/header-bg.jpg) 100% 65% no-repeat;
+	background: url(/public/images/header-bg.jpg) 100% 65% no-repeat;
 	background-size: cover;
 	position: absolute;
 	top: 0;
@@ -2063,7 +2063,7 @@ footer .mixpanel a {
 	margin: 10px 0
 }
 .gapps {
-	background: url(../images/gplus-white.png) no-repeat;
+	background: url(/public/images/gplus-white.png) no-repeat;
 	background-size: 30px;
 	display: inline-block;
 	height: 42px;
