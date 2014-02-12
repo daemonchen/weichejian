@@ -16,7 +16,7 @@
     <a href="/login/google-oauth2/" class="signup-link gapps"><span>联合登陆</span></a>
     <hr>
     <p>或者使用邮箱登录</p>
-    <form action="." method="POST">
+    <form action="/accounts" method="POST">
         <input type='hidden' name='csrfmiddlewaretoken' value='' />
         <tr>
         	<th><label for="id_email">Email:</label></th>
