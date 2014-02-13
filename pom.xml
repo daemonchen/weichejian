@@ -32,6 +32,7 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<configuration>
 					<contextPath>/</contextPath>
+					<webDefaultXml>src/main/resources/webdefault.xml</webDefaultXml>
 				</configuration>
 			</plugin>
 		</plugins>
