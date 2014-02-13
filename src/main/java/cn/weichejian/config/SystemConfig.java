@@ -32,6 +32,7 @@ public class SystemConfig extends JFinalConfig {
 	}
 
 	public void configRoute(Routes me) {
+		me.add("/admin", IndexController.class);
 		me.add("/index", IndexController.class);
 		me.add("/accounts", AccountsController.class);
 		me.add("/text", TextController.class);
