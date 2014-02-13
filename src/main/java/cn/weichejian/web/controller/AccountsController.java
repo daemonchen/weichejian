@@ -15,7 +15,7 @@ public class AccountsController extends Controller {
 		if (getPara("password") == user.getStr("password")) {
 			this.renderText("error"); //TODO render json after while
 		}else{
-			this.redirect("/index");
+			this.redirect("/admin");
 		}
 	}
 	public void login() {
