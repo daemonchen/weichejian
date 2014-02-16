@@ -1,5 +1,6 @@
 package cn.weichejian.config;
 
+import cn.weichejian.web.controller.AdminController;
 import cn.weichejian.web.controller.mainsite.AccountsController;
 import cn.weichejian.web.controller.mainsite.IndexController;
 import cn.weichejian.web.controller.wechat.WeChatController;
@@ -21,7 +22,7 @@ public class FrontRoutes extends Routes {
 	}
 
 	private void admin() {
-		add("/admin", IndexController.class);
+		add("/admin", AdminController.class);
 	}
 	
 	private void wechat() {
