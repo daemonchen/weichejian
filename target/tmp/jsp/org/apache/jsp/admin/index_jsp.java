@@ -155,8 +155,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <i class=\"fa fa-angle-left pull-right\"></i>\n");
       out.write("                            </a>\n");
       out.write("                            <ul class=\"treeview-menu\">\n");
-      out.write("                                <li><a href=\"./admin/mp_info\" style=\"margin-left: 10px;\"><i class=\"fa fa-angle-double-right\"></i> 微信公众 账号</a></li>\n");
-      out.write("                                <li><a href=\"/\" style=\"margin-left: 10px;\"><i class=\"fa fa-angle-double-right\"></i> 修改密码</a></li>\n");
+      out.write("                                <li><a href=\"/admin/mp_info\" style=\"margin-left: 10px;\"><i class=\"fa fa-angle-double-right\"></i> 微信公众 账号</a></li>\n");
+      out.write("                                <li><a href=\"/admin/show_change_pwd\" style=\"margin-left: 10px;\"><i class=\"fa fa-angle-double-right\"></i> 修改密码</a></li>\n");
       out.write("                                <li><a href=\"/\" style=\"margin-left: 10px;\"><i class=\"fa fa-angle-double-right\"></i> 修改个人信息</a></li>\n");
       out.write("                                <li><a href=\"/\" style=\"margin-left: 10px;\"><i class=\"fa fa-angle-double-right\"></i> 查看权限</a></li>\n");
       out.write("                            </ul>\n");

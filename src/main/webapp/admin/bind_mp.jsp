@@ -113,7 +113,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li class="active"><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a></li>
-                                <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
+                                <li><a href="/admin/show_change_pwd" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
                                 <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a></li>
                                 <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a></li>
                             </ul>

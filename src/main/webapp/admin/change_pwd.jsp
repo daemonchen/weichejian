@@ -105,15 +105,15 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="treeview">
+                        <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-dashboard"></i>
                                 <span>账号设置</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/mp_info" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a></li>
-                                <li><a href="/admin/show_change_pwd" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
+                                <li class="active"><a href="/admin/mp_info" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a></li>
+                                <li><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
                                 <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a></li>
                                 <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a></li>
                             </ul>
@@ -156,6 +156,33 @@
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
                         <div class="col-lg-12 ">
+                        	<div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">绑定公众账号</h3>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form  method="POST" id="pwd_form">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>旧密码</label>
+                                            <input type="password" name="mp_account" class="form-control" id="origin_pwd" placeholder="旧密码">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>新密码</label>
+                                            <input type="password" name="mp_account_name" class="form-control" id="new_pwd" placeholder="新密码">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>确认新密码</label>
+                                            <input type="password" name="mp_account_name" class="form-control" id="" placeholder="新密码">
+                                        </div>
+                                    </div>
+                                    <!-- /.box-body -->
+
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">绑定</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                      </div>
                  </section>
