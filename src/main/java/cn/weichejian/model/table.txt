@@ -1,4 +1,4 @@
- create database weichejian_db;
+create database weichejian_db;
 
 create table t_user(
 id int auto_increment primary key, --主键
@@ -9,6 +9,6 @@ reg_time datetime,--注册时间
 mp_account varchar(100), --公众帐号
 mp_account_name varchar(100), --公众帐号名称
 mp_type int --公众号类型 1 订阅 2服务
-)
+);
 
- ALTER TABLE t_user ADD UNIQUE (login_name) --唯一索引，逻辑主键
+ALTER TABLE t_user ADD UNIQUE (login_name) --唯一索引，逻辑主键

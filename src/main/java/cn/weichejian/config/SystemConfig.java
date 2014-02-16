@@ -1,9 +1,6 @@
 package cn.weichejian.config;
 
 import cn.weichejian.model.User;
-import cn.weichejian.web.controller.AccountsController;
-import cn.weichejian.web.controller.IndexController;
-import cn.weichejian.web.controller.TextController;
 
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.wall.WallFilter;
@@ -15,27 +12,20 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
+import com.jfinal.plugin.activerecord.SqlReporter;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.druid.DruidStatViewHandler;
 import com.jfinal.render.ViewType;
 
-//public class FrontRoutes extends Routes {
-//	public void config() {
-//		add("/", IndexController.class);
-//		add("/blog", BlogController.class);
-//		}
-//}
 public class SystemConfig extends JFinalConfig {
 	public void configConstant(Constants me) {
 		me.setDevMode(true);
+		SqlReporter.setLogger(true);
 		me.setViewType(ViewType.JSP);
 	}
 
 	public void configRoute(Routes me) {
-		me.add("/admin", IndexController.class);
-		me.add("/index", IndexController.class);
-		me.add("/accounts", AccountsController.class);
-		me.add("/text", TextController.class);
+		me.add(new FrontRoutes());
 	}
 
 	public void configPlugin(Plugins me) {
