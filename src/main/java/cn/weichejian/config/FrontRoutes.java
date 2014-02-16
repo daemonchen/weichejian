@@ -1,6 +1,6 @@
 package cn.weichejian.config;
 
-import cn.weichejian.web.controller.AdminController;
+import cn.weichejian.web.controller.admin.AdminController;
 import cn.weichejian.web.controller.mainsite.AccountsController;
 import cn.weichejian.web.controller.mainsite.IndexController;
 import cn.weichejian.web.controller.wechat.WeChatController;
