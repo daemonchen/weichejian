@@ -9,11 +9,7 @@ import com.jfinal.plugin.activerecord.Page;
 
 public class AccountsController extends Controller {
 	public void index(){
-		List<User> users =  User.dao.find("select * from t_user where login_name=?", getPara("email"));
-		User user = users.get(0);
-		System.out.println(user.getStr("password"));
-		System.out.println(getPara("password"));
-		System.out.print(getPara("password").equals(user.getStr("password")));
+		User user =  User.dao.findFirst("select * from t_user where login_name=?", getPara("email"));
 		if (getPara("password").equals(user.getStr("password"))) {
 			setSessionAttr("loginUser",user);
 			this.redirect("/admin");
@@ -33,6 +29,8 @@ public class AccountsController extends Controller {
 		 double md5 the pwd && return error when db save occur err
 		 */
 		new User().set("login_name", getPara("email")).set("password", getPara("password")).save();
-		this.redirect("/index");
+		User user =  User.dao.findFirst("select * from t_user where login_name=?", getPara("email"));
+		setSessionAttr("loginUser",user);
+		this.redirect("/admin");
 	}
 }
