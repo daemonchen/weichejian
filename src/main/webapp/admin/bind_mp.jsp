@@ -105,14 +105,14 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="treeview">
+                        <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-dashboard"></i>
                                 <span>账号设置</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="./admin/mp_info" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a></li>
+                                <li class="active"><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a></li>
                                 <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
                                 <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a></li>
                                 <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a></li>
@@ -156,6 +156,36 @@
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
                         <div class="col-lg-12 ">
+                        	<div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">绑定公众账号</h3>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form  action="/admin/bind_mp" method="POST">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>微信公众账号</label>
+                                            <input type="text" name="mp_account" class="form-control" id="" placeholder="微信公众账号">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>公众账号名称</label>
+                                            <input type="text" name="mp_account_name" class="form-control" id="" placeholder="公众账号名称">
+                                        </div>
+                                       <div class="form-group">
+                                            <label>公共账号类型</label>
+                                            <select class="form-control" name="mp_type">
+                                                <option value=1>订阅号</option>
+                                                <option value=2>服务号</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div><!-- /.box-body -->
+
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">绑定</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                      </div>
                  </section>

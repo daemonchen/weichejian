@@ -12,10 +12,13 @@ public class AccountsController extends Controller {
 		List<User> users =  User.dao.find("select * from t_user where login_name=?", getPara("email"));
 		User user = users.get(0);
 		System.out.println(user.getStr("password"));
-		if (getPara("password") == user.getStr("password")) {
-			this.renderText("error"); //TODO render json after while
+		System.out.println(getPara("password"));
+		System.out.print(getPara("password").equals(user.getStr("password")));
+		if (getPara("password").equals(user.getStr("password"))) {
+			setSessionAttr("loginUser",user);
+			this.redirect("/admin");
 		}else{
-			this.redirect("/index");
+			this.renderText("error"); //TODO render json after while
 		}
 	}
 	public void login() {
