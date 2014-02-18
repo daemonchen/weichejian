@@ -11,6 +11,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/common/mainHeader.jsp");
+    _jspx_dependants.add("/common/mainFooter.jsp");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -52,25 +58,44 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <link rel=\"shortcut icon\" type=\"image/png\" href=\"public/images/logo.ico\">\n");
       out.write("  <link rel=\"stylesheet\" href=\"public/css/index.css\" type=\"text/css\" />\n");
       out.write("</head>\n");
-      out.write("<body class=\"landing site\">\n");
+      out.write("<body class=\"landing site features\">\n");
       out.write("\n");
-      out.write("<div class=\"navbar\">\n");
-      out.write("    <div class=\"container\">\n");
-      out.write("        <a class=\"navbar-brand\" href=\"/\"><img src=\"/public/images/logo.png\" width=\"48\" alt=\"Inc\"></a>\n");
-      out.write("        <ul class=\"nav navbar-nav\">\n");
-      out.write("            <li><a href=\"/features/\" class=\"nav-features\">主页</a></li>\n");
-      out.write("            <li><a href=\"/pricing/\" class=\"nav-pricing\">案例</a></li>\n");
-      out.write("            <li><a href=\"/about/\" class=\"nav-about\">套餐</a></li>\n");
-      out.write("            <li class=\"sep\"></li>\n");
-      out.write("            <li><a href=\"http://blog.sendtoinc.com/\">关于我们</a>\n");
-      out.write("            <li class=\"sep\"></li>\n");
-      out.write("            \n");
-      out.write("            <li><a href=\"/accounts/login/\">登录</a></li>\n");
-      out.write("            <li class=\"signup\"><a href=\"/accounts/signup/\" class=\"btn signup-link\">注册</a></li>\n");
-      out.write("            \n");
-      out.write("        </ul>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
+      out.write("\r\n");
+      out.write("<div class=\"navbar\">\r\n");
+      out.write("    <div class=\"container\">\r\n");
+      out.write("        <a class=\"navbar-brand\" href=\"/\"><img src=\"/public/images/logo.png\" width=\"48\" alt=\"Inc\"></a>\r\n");
+      out.write("        <ul class=\"nav navbar-nav\">\r\n");
+      out.write("            <li class=");
+if(request.getAttribute("controllerName").equals("index")){
+      out.write("active ");
+}
+      out.write("\r\n");
+      out.write("            ><a href=\"/features/\" class=\"nav-features\">主页</a></li>\r\n");
+      out.write("            <li><a href=\"/pricing/\" class=\"nav-pricing\">案例</a></li>\r\n");
+      out.write("            <li><a href=\"/about/\" class=\"nav-about\">套餐</a></li>\r\n");
+      out.write("            <li class=\"sep\"></li>\r\n");
+      out.write("            <li><a href=\"http://blog.sendtoinc.com/\">关于我们</a>\r\n");
+      out.write("            <li class=\"sep\"></li>\r\n");
+      out.write("            ");
+if(request.getAttribute("user") !=null){ 
+      out.write("\r\n");
+      out.write("            <li><a href=\"/admin\">");
+      out.print( request.getAttribute("user") );
+      out.write("</a></li>\r\n");
+      out.write("            \r\n");
+      out.write("            ");
+}else{ 
+      out.write("\r\n");
+      out.write("            <li><a href=\"/accounts/login/\">登录</a></li>\r\n");
+      out.write("            <li class=\"signup\"><a href=\"/accounts/signup/\" class=\"btn signup-link\">注册</a></li>\r\n");
+      out.write("            ");
+} 
+      out.write("\r\n");
+      out.write("            \r\n");
+      out.write("        </ul>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>");
+      out.write("\n");
       out.write("\n");
       out.write("    <header>\n");
       out.write("        <div class=\"bg\"></div>\n");
@@ -84,30 +109,33 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          \n");
       out.write("        </div>\n");
       out.write("    </header>\n");
-      out.write("    <footer>\n");
+      out.write("\r\n");
+      out.write("<footer>\r\n");
+      out.write("\r\n");
+      out.write("    <div class=\"container\">\r\n");
+      out.write("        <div class=\"row\">\r\n");
+      out.write("            <div class=\"col col-lg-10\">\r\n");
+      out.write("                <img src=\"public/images/logo.png\" alt=\"Inc\" width=\"42\" style=\"opacity:0.65\">\r\n");
+      out.write("                <a href=\"/about/\">About</a>\r\n");
+      out.write("               \r\n");
+      out.write("                <a href=\"mailto:daemon@weichejian.cn\">Contact Us</a>\r\n");
+      out.write("                <div style=\"padding:0 20px; vertical-align:middle; display:inline-block\">\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"col col-lg-2\">\r\n");
+      out.write("                <span>&copy 2014 - weichejian</span>\r\n");
+      out.write("                \r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("\r\n");
+      out.write("</footer>\r\n");
+      out.write("<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\" type=\"text/javascript\" charset=\"utf-8\">\r\n");
+      out.write("</script>\r\n");
+      out.write("\r\n");
+      out.write("<script src=\"/public/js/main.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
       out.write("\n");
-      out.write("    <div class=\"container\">\n");
-      out.write("        <div class=\"row\">\n");
-      out.write("            <div class=\"col col-lg-10\">\n");
-      out.write("                <img src=\"public/images/logo.png\" alt=\"Inc\" width=\"42\" style=\"opacity:0.65\">\n");
-      out.write("                <a href=\"/about/\">About</a>\n");
-      out.write("               \n");
-      out.write("                <a href=\"mailto:daemon@weichejian.cn\">Contact Us</a>\n");
-      out.write("                <div style=\"padding:0 20px; vertical-align:middle; display:inline-block\">\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"col col-lg-2\">\n");
-      out.write("                <span>&copy 2014 - weichejian</span>\n");
-      out.write("                \n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
       out.write("\n");
-      out.write("</footer>\n");
-      out.write("<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\" type=\"text/javascript\" charset=\"utf-8\">\n");
-      out.write("</script>\n");
-      out.write("\n");
-      out.write("  <script src=\"/public/js/main.js\" type=\"text/javascript\" charset=\"utf-8\"></script>\n");
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>\n");
