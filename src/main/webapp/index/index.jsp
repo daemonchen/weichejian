@@ -38,17 +38,7 @@
                     <p>创新 专注</p>
                 </div>
             </div>
-            <div class="col col-xs-5 col-md-offset-1">
-                <div class="box">
-                <h3>注册</h3>
-                <a href="/login/google-oauth2/" class="gapps"><span>使用微信账号</span></a>
-                <form action="." method="POST"><input type='hidden' name='' value='' />
-                    <label>或者用邮箱注册</label>
-                    <input type="text" name="email" placeholder="Enter your email">
-                    <input type="submit" class="btn" value="Sign Up">
-                </form>
-                </div>
-            </div>
+          
         </div>
     </header>
     <footer>
@@ -58,21 +48,14 @@
             <div class="col col-lg-10">
                 <img src="public/images/logo.png" alt="Inc" width="42" style="opacity:0.65">
                 <a href="/about/">About</a>
-                <a href="http://blog.sendtoinc.com/">Blog</a>
-                <a href="/pricing/">Pricing</a>
-                <a href="/apps/">Apps</a>
-                <a href="/help/">Help</a>
-                <a href="/terms/">Terms</a>
-                <a href="/privacy/">Privacy</a>
-                <a href="mailto:hello@sendtoinc.com">Contact Us</a>
-                <div style="padding:0 20px; vertical-align:middle; display:inline-block"><a href="https://twitter.com/sendtoinc" class="twitter-follow-button" data-show-count="false">Follow @sendtoinc</a>
+               
+                <a href="mailto:daemon@weichejian.cn">Contact Us</a>
+                <div style="padding:0 20px; vertical-align:middle; display:inline-block">
                 </div>
             </div>
             <div class="col col-lg-2">
-                <span>&copy 2014 - Kippt Inc.</span>
-                <div class="mixpanel">
-                    <a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>
-                </div>
+                <span>&copy 2014 - weichejian</span>
+                
             </div>
         </div>
     </div>

@@ -23,6 +23,9 @@ public class AccountsController extends Controller {
 	public void signup() {
 		this.render("signup.jsp");
 	}
+	public void passwordreset(){
+		this.render("reset.jsp");
+	}
 	public void signuppost() {
 		//TODO
 		/*

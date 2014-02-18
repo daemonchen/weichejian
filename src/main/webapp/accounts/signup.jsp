@@ -15,27 +15,16 @@
     
 <div id="login">
     <img src="/public/images/logo.png" height="72" width="72">
-    
-        <h1>Sign up to Inc</h1>
-    
-
-    
-        <a href="/login/google-oauth2/" class="gapps"><span>Sign Up with Google Apps</span></a>
-        <hr>
-        <p>
-            Or with your work email:
-        </p>
-    
-
+    <h1>注册微车间</h1>
     <div>
         <form action="/accounts/signuppost" method="POST">
             <input type='hidden' name='csrfmiddlewaretoken' value='GpfVAYNT0V2kB4TpWUgKoNiAK3LKZbz4' />
             <tr>
-            	<th><label for="id_email">Email:</label></th>
+            	<th><label for="id_email">账号:</label></th>
             	<td><input id="id_email" maxlength="75" name="email" placeholder="Email" type="text" /></td>
             </tr>
 			<tr>
-				<th><label for="id_password">Password:</label></th>
+				<th><label for="id_password">密码:</label></th>
 				<td>
 				<input id="id_password" name="password" placeholder="Password" type="password" />
 				<input id="id_invitation_key" name="invitation_key" type="hidden" /></td>
@@ -44,7 +33,7 @@
         </form>
     </div>
 </div>
-<p class="small"><a href="/login/">Already have an account? Log in</a></p>
+<p class="small"><a href="/accounts/login/">已经有账号了? 登陆</a></p>
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8">

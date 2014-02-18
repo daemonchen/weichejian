@@ -63,7 +63,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<body class=\"skin-blue wysihtml5-supported\" style=\"min-height: 375px;\">\n");
       out.write("        <!-- header logo: style can be found in header.less -->\n");
       out.write("        <header class=\"header\">\n");
-      out.write("            <a href=\"index.html\" class=\"logo\">\n");
+      out.write("            <a href=\"/\" class=\"logo\">\n");
       out.write("                <!-- Add the class icon to your logo image or logo icon to add the margining -->\n");
       out.write("                Wei Che Jian\n");
       out.write("            </a>\n");
