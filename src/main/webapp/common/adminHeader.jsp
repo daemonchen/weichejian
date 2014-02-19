@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.*"%>
 <header class="header">
      <a href="/" class="logo">
          <!-- Add the class icon to your logo image or logo icon to add the margining -->
@@ -26,29 +28,30 @@
                          <li class="user-header bg-light-blue">
                              <img src="/public/images/logo.png" class="img-circle" alt="User Image">
                              <p>
-                                 Jane Doe - Web Developer
-                                 <small>Member since Nov. 2012</small>
+                                 <%= request.getAttribute("user") %>
+                                 <div>
+                                 <% 
+                                 SimpleDateFormat s = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+                                 Date date = new Date();
+								 %>
+								 <%=s.format(date)%>
+								 </div>
                              </p>
                          </li>
                          <!-- Menu Body -->
                          <li class="user-body">
-                             <div class="col-xs-4 text-center">
-                                 <a href="#">Followers</a>
+                             <div class="col-xs-12 text-center">
+                                 <a href="#">有疑问，需要帮助？</a>
                              </div>
-                             <div class="col-xs-4 text-center">
-                                 <a href="#">Sales</a>
-                             </div>
-                             <div class="col-xs-4 text-center">
-                                 <a href="#">Friends</a>
-                             </div>
+                            
                          </li>
                          <!-- Menu Footer-->
                          <li class="user-footer">
                              <div class="pull-left">
-                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                 <a href="#" class="btn btn-default btn-flat">个人信息</a>
                              </div>
                              <div class="pull-right">
-                                 <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                 <a href="/accounts/signout" class="btn btn-default btn-flat">注销</a>
                              </div>
                          </li>
                      </ul>

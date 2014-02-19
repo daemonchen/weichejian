@@ -36,4 +36,9 @@ public class AccountsController extends Controller {
 		setSessionAttr("loginUser",user);
 		this.redirect("/admin");
 	}
+	
+	public void signout(){
+		setSessionAttr("loginUser",null);
+		this.redirect("/");
+	}
 }

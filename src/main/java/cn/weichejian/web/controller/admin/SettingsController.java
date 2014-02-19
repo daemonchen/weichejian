@@ -11,11 +11,15 @@ import com.jfinal.plugin.activerecord.Page;
  * 其他的一级菜单，要写在独立controller里
  * */
 
-public class AdminController extends Controller {
+public class SettingsController extends Controller {
 	public void index(){
+		this.setAttr("controllerName", "nothing");
+		this.setAttr("actionName", "nothing");
 		this.render("index.jsp");
 	}
 	public void mp_info(){
+		this.setAttr("controllerName", "settings");//TODO set this controller in interceptor
+		this.setAttr("actionName", "mp_info");
 		//TODO if user has bind already,show user info page
 		this.render("bind_mp.jsp");
 	}
@@ -40,6 +44,8 @@ public class AdminController extends Controller {
 //		System.out.println(getPara("mp_type")); 
 	}
 	public void show_change_pwd(){
+		this.setAttr("controllerName", "settings");
+		this.setAttr("actionName", "show_change_pwd");
 		render("change_pwd.jsp");
 	}
 	public void change_pwd(){

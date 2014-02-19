@@ -8,34 +8,34 @@
                 <img src="/public/images/logo.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Hello, Jane</p>
+                <p><%= request.getAttribute("user") %>，欢迎您</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="seach" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
-        </form>
+        
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="treeview">
+            <li class="treeview <%if(request.getAttribute("controllerName").equals("settings")){%>active <%}%>">
                 <a href="#">
                     <i class="fa fa-dashboard"></i>
                     <span>账号设置</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/mp_info" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a></li>
-                    <li><a href="/admin/show_change_pwd" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
-                    <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a></li>
-                    <li><a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a></li>
+                    <li class= <%if(request.getAttribute("actionName").equals("mp_info")){%>active <%}%>>
+                    	<a href="/admin/mp_info" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a>
+                    </li>
+                    <li class= <%if(request.getAttribute("actionName").equals("show_change_pwd")){%>active <%}%>>
+                    	<a href="/admin/show_change_pwd" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a>
+                    </li>
+                    <li class= <%if(request.getAttribute("actionName").equals("show_usr_info")){%>active <%}%>>
+                    	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a>
+                    </li>
+                    <li class= <%if(request.getAttribute("actionName").equals("show_usr_permission")){%>active <%}%>>
+                    	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a>
+                    </li>
                 </ul>
             </li>
             <li>
