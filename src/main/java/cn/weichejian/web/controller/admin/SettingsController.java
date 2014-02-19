@@ -15,11 +15,9 @@ import com.jfinal.plugin.activerecord.Page;
 
 public class SettingsController extends Controller {
 	public void index(){
-		this.setAttr("controllerName", "nothing");
 		this.render("index.jsp");
 	}
 	public void mp_info(){
-		this.setAttr("controllerName", "settings");//TODO set this controller in interceptor
 		//TODO if user has bind already,show user info page
 		this.render("bind_mp.jsp");
 	}
@@ -44,7 +42,6 @@ public class SettingsController extends Controller {
 //		System.out.println(getPara("mp_type")); 
 	}
 	public void show_change_pwd(){
-		this.setAttr("controllerName", "settings");
 		render("change_pwd.jsp");
 	}
 	@ClearInterceptor(ClearLayer.ALL)
