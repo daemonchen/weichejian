@@ -46,6 +46,7 @@ public class SystemConfig extends JFinalConfig {
 	}
 
 	public void configInterceptor(Interceptors me) {
+		me.add(new AllActionInterceptor());
 	}
 
 	public void configHandler(Handlers me) {

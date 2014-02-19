@@ -8,7 +8,7 @@
                 <img src="/public/images/logo.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p><%= request.getAttribute("user") %>，欢迎您</p>
+                <p><%= session.getAttribute("user") %>，欢迎您</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -17,23 +17,23 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="treeview <%if(request.getAttribute("controllerName").equals("settings")){%>active <%}%>">
+            <li class="treeview <%if(session.getAttribute("controllerName").equals("/admin")){%>active <%}%>">
                 <a href="#">
                     <i class="fa fa-dashboard"></i>
                     <span>账号设置</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li class= <%if(request.getAttribute("actionName").equals("mp_info")){%>active <%}%>>
+                    <li class= <%if(session.getAttribute("actionName").equals("mp_info")){%>active <%}%>>
                     	<a href="/admin/mp_info" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a>
                     </li>
-                    <li class= <%if(request.getAttribute("actionName").equals("show_change_pwd")){%>active <%}%>>
+                    <li class= <%if(session.getAttribute("actionName").equals("show_change_pwd")){%>active <%}%>>
                     	<a href="/admin/show_change_pwd" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a>
                     </li>
-                    <li class= <%if(request.getAttribute("actionName").equals("show_usr_info")){%>active <%}%>>
+                    <li class= <%if(session.getAttribute("actionName").equals("show_usr_info")){%>active <%}%>>
                     	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a>
                     </li>
-                    <li class= <%if(request.getAttribute("actionName").equals("show_usr_permission")){%>active <%}%>>
+                    <li class= <%if(session.getAttribute("actionName").equals("show_usr_permission")){%>active <%}%>>
                     	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a>
                     </li>
                 </ul>

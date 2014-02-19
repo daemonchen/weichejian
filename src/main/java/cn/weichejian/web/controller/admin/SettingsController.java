@@ -4,6 +4,8 @@ import java.util.List;
 
 import cn.weichejian.model.User;
 
+import com.jfinal.aop.ClearInterceptor;
+import com.jfinal.aop.ClearLayer;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 
@@ -14,12 +16,10 @@ import com.jfinal.plugin.activerecord.Page;
 public class SettingsController extends Controller {
 	public void index(){
 		this.setAttr("controllerName", "nothing");
-		this.setAttr("actionName", "nothing");
 		this.render("index.jsp");
 	}
 	public void mp_info(){
 		this.setAttr("controllerName", "settings");//TODO set this controller in interceptor
-		this.setAttr("actionName", "mp_info");
 		//TODO if user has bind already,show user info page
 		this.render("bind_mp.jsp");
 	}
@@ -45,9 +45,9 @@ public class SettingsController extends Controller {
 	}
 	public void show_change_pwd(){
 		this.setAttr("controllerName", "settings");
-		this.setAttr("actionName", "show_change_pwd");
 		render("change_pwd.jsp");
 	}
+	@ClearInterceptor(ClearLayer.ALL)
 	public void change_pwd(){
 		User user = getSessionAttr("loginUser");
 		if(user == null){

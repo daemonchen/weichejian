@@ -21,14 +21,14 @@
                  <li class="dropdown user user-menu">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                          <i class="glyphicon glyphicon-user"></i>
-                         <span> <%= request.getAttribute("user") %> <i class="caret"></i></span>
+                         <span> <%= session.getAttribute("user") %> <i class="caret"></i></span>
                      </a>
                      <ul class="dropdown-menu">
                          <!-- User image -->
                          <li class="user-header bg-light-blue">
                              <img src="/public/images/logo.png" class="img-circle" alt="User Image">
                              <p>
-                                 <%= request.getAttribute("user") %>
+                                 <%= session.getAttribute("user") %>
                                  <div>
                                  <% 
                                  SimpleDateFormat s = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
