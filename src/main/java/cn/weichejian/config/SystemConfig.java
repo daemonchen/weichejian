@@ -1,5 +1,6 @@
 package cn.weichejian.config;
 
+import cn.weichejian.model.LoginLog;
 import cn.weichejian.model.User;
 
 import com.alibaba.druid.filter.stat.StatFilter;
@@ -42,6 +43,7 @@ public class SystemConfig extends JFinalConfig {
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
 		arp.setContainerFactory(new CaseInsensitiveContainerFactory(true));
 		arp.addMapping("t_user", User.class);
+		arp.addMapping("t_login_log", LoginLog.class);
 		me.add(arp);
 	}
 

@@ -3,6 +3,9 @@ package cn.weichejian.web.controller.mainsite;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import cn.weichejian.model.LoginLog;
 import cn.weichejian.model.User;
 
 import com.jfinal.core.Controller;
@@ -14,10 +17,25 @@ public class AccountsController extends Controller {
 		if (getPara("password").equals(user.getStr("password"))) {
 			setSessionAttr("loginUser",user);
 			this.redirect("/admin");
+			doLoginLog(user);
 		}else{
 			this.renderText("error"); //TODO render json after while
 		}
 	}
+	
+	private void doLoginLog(User user){
+		try {
+			new LoginLog().set("user_id",user.get("id"))
+			.set("login_time", new Date())
+			.set("ip",getRequest().getRemoteAddr())
+			.save();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+	}
+	
 	public void login() {
 		this.render("login.jsp");
 	}
