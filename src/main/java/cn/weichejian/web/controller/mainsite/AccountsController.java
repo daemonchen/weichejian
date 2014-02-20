@@ -1,5 +1,6 @@
 package cn.weichejian.web.controller.mainsite;
 
+import java.util.Date;
 import java.util.List;
 
 import cn.weichejian.model.User;
@@ -26,12 +27,15 @@ public class AccountsController extends Controller {
 	public void passwordreset(){
 		this.render("reset.jsp");
 	}
-	public void signuppost() {
+	public void signuppost() {//注册
 		//TODO
 		/*
 		 double md5 the pwd && return error when db save occur err
 		 */
-		new User().set("login_name", getPara("email")).set("password", getPara("password")).save();
+		new User().set("login_name", getPara("email"))
+		.set("password", getPara("password"))
+		.set("reg_time", new Date())
+		.save();
 		User user =  User.dao.findFirst("select * from t_user where login_name=?", getPara("email"));
 		setSessionAttr("loginUser",user);
 		this.redirect("/admin");
