@@ -1,14 +1,42 @@
-create database weichejian_db;
+ create table t_user(
+ id int auto_increment primary key,
+ login_name varchar(50),
+ password varchar(100),
+ mobile varchar(15),
+ email varchar(100),
+ qq varchar(20),
+ reg_time bigint,
+ modify_time bigint);
 
-create table t_user(
-id int auto_increment primary key, --主键
-login_name varchar(50), --登录名
-password varchar(100), --登录密码
-mobile varchar(20),--手机号
-reg_time datetime,--注册时间
-mp_account varchar(100), --公众帐号
-mp_account_name varchar(100), --公众帐号名称
-mp_type int --公众号类型 1 订阅 2服务
-);
+alter table t_user add unique(login_name);
 
-ALTER TABLE t_user ADD UNIQUE (login_name) --唯一索引，逻辑主键
+ create table t_login_log(
+ id int auto_increment primary key,
+ user_id int,
+ ip varchar(20),
+ login_time bigint);
+
+alter table t_login_log add index user_id (user_id);
+
+ create table t_mp_account(
+ id int auto_increment primary key,
+ user_id int,
+ mp_account_name varchar(100),
+ mp_type int,
+ app_id varchar(100),
+ app_secret varchar(100),
+ create_time bigint,
+ modify_time bigint);
+
+alter table t_mp_account add index user_id (user_id);
+
+ create table t_function_list(
+ id int auto_increment primary key,
+ name varchar(100),
+ price int,
+ status int,
+ create_time bigint,
+ modify_time bigint);
+
+
+

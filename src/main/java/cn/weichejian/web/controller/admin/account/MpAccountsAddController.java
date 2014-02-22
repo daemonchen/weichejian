@@ -11,10 +11,10 @@ import com.jfinal.aop.Before;
 import com.jfinal.aop.ClearInterceptor;
 import com.jfinal.aop.ClearLayer;
 
-public class MpAccountsController extends Controller {
+public class MpAccountsAddController extends Controller {
 	@Before(Restful.class)
 	public void index(){
-		this.render("/admin/mp/index.jsp");
+		this.render("/admin/mp/add.jsp");
 		//TODO display user info in index.jsp
 	}
 	@ClearInterceptor(ClearLayer.ALL)
@@ -35,7 +35,4 @@ public class MpAccountsController extends Controller {
 		}
 	}
 	
-	public void update(){
-		//TODO update app_id app_secret modify_time
-	}
 }

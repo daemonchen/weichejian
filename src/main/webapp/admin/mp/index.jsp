@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="java.util.Iterator"%>
+<%@ page import="java.util.List"%>
+<%@ page import="cn.weichejian.model.MpAccount"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,48 +30,50 @@
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Dashboard
-                        <small>Control panel</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>
+                <%@ include file="/common/adminInnerHeader.jsp" %>
 
-                <!-- Main content -->
                 <section class="content">
 
-                    <!-- Small boxes (Stat box) -->
                     <div class="row">
                         <div class="col-lg-12 ">
                         	<div class="box box-primary">
                                 <div class="box-header">
-                                    <h3 class="box-title">绑定公众账号</h3>
-                                </div><!-- /.box-header -->
-                                <!-- form start -->
-                                <form  action="/admin/mpinfo" method="POST">
-                                    <div class="box-body">
-                                        <div class="form-group">
-                                            <label>公众账号名称</label>
-                                            <input type="text" name="mp_account_name" class="form-control" id="" placeholder="公众账号名称">
-                                        </div>
-                                       <div class="form-group">
-                                            <label>公共账号类型</label>
-                                            <select class="form-control" name="mp_type">
-                                                <option value=1>订阅号</option>
-                                                <option value=2>服务号</option>
-                                            </select>
-                                        </div>
-                                        
-                                    </div><!-- /.box-body -->
-
-                                    <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary">绑定</button>
-                                    </div>
-                                </form>
+                                    <h3 class="box-title">微信公众账号</h3>
+                                </div>
+                                <div class="table-responsive">
+                                    <!-- .table - Uses sparkline charts-->
+                                    <table class="table table-striped">
+                                        <tbody>
+                                        <tr>
+                                            <th>账号名称</th>
+                                            <th>类型</th>
+                                            <th>Token</th>
+                                            <th>接口地址</th>
+                                        </tr>
+                                        <%
+                                        List<MpAccount> mpAccounts = (List<MpAccount>)session.getAttribute("mpAccounts");
+                                        for(Iterator<MpAccount> it = mpAccounts.iterator(); it.hasNext();){
+                                        	MpAccount mpAccount = it.next();
+                                        	%>
+                                        	<tr>
+                                        	<td><%= mpAccount.get("mp_account_name") %></td>
+                                        	<td><%= mpAccount.get("mp_type") %></td>
+                                        	<td>weichejian</td>
+                                        	<td>http://localhost:8080/api/<%= mpAccount.get("user_id") %></td>
+                                        	</tr>
+                                        <%
+                                        }
+                                        %>
+                                    </tbody>
+                                    </table><!-- /.table -->
+                                </div>
+                                
+                                <div class="box-footer">
+                                    <button class="btn btn-info">
+                                    	<i class="fa fa-edit"></i>
+                                     	<a href="/admin/mpadd" style="color:#fff;">添加微信账号</a>
+                                     </button>
+                                </div>
                             </div>
                         </div>
                      </div>

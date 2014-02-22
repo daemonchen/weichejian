@@ -34,6 +34,32 @@
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
                         <div class="col-lg-12 ">
+                        	<div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">绑定公众账号</h3>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form  action="/admin/mpadd" method="POST">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>公众账号名称</label>
+                                            <input type="text" name="mp_account_name" class="form-control" id="" placeholder="公众账号名称">
+                                        </div>
+                                       <div class="form-group">
+                                            <label>公共账号类型</label>
+                                            <select class="form-control" name="mp_type">
+                                                <option value=1>订阅号</option>
+                                                <option value=2>服务号</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div><!-- /.box-body -->
+
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">绑定</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                      </div>
                  </section>
