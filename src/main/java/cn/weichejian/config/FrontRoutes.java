@@ -9,6 +9,7 @@ import cn.weichejian.web.controller.wechat.WeChatController;
 import cn.weichejian.web.controller.admin.account.MpAccountsAddController;
 import cn.weichejian.web.controller.admin.account.MpAccountsInfoController;
 import cn.weichejian.web.controller.admin.account.UpdatePasswordController;
+import cn.weichejian.web.controller.admin.account.UserInfoController;
 
 import com.jfinal.config.Routes;
 
@@ -29,6 +30,7 @@ public class FrontRoutes extends Routes {
 	}
 
 	private void admin() {
+		add("/admin/userinfo", UserInfoController.class);
 		add("/admin/mpadd", MpAccountsAddController.class);
 		add("/admin/mpinfo", MpAccountsInfoController.class);
 		add("/admin/updatePassword", UpdatePasswordController.class);

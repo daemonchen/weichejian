@@ -30,8 +30,8 @@
                     <li class= <%if(session.getAttribute("controllerName").equals("/admin/updatePassword")){%>active <%}%>>
                     	<a href="/admin/updatePassword" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a>
                     </li>
-                    <li class= <%if(session.getAttribute("controllerName").equals("show_usr_info")){%>active <%}%>>
-                    	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a>
+                    <li class= <%if(session.getAttribute("controllerName").equals("/admin/userinfo")){%>active <%}%>>
+                    	<a href="/admin/userinfo" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a>
                     </li>
                     <li class= <%if(session.getAttribute("controllerName").equals("show_usr_permission")){%>active <%}%>>
                     	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a>

@@ -14,7 +14,7 @@ import com.jfinal.aop.ClearLayer;
 public class MpAccountsAddController extends Controller {
 	@Before(Restful.class)
 	public void index(){
-		this.render("/admin/mp/add.jsp");
+		this.render("/admin/accounts/mp/add.jsp");
 		//TODO display user info in index.jsp
 	}
 	@ClearInterceptor(ClearLayer.ALL)

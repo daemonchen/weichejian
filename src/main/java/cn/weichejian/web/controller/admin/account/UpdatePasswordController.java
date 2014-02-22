@@ -14,7 +14,7 @@ import com.jfinal.aop.ClearLayer;
 public class UpdatePasswordController extends Controller{
 	@Before(Restful.class)
 	public void index(){
-		render("/admin/updatePassword/index.jsp");
+		render("/admin/accounts/updatePassword/index.jsp");
 	}
 	
 	@ClearInterceptor(ClearLayer.ALL)

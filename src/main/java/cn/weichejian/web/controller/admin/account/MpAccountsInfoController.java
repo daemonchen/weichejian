@@ -1,6 +1,5 @@
 package cn.weichejian.web.controller.admin.account;
 
-import java.util.Date;
 import java.util.List;
 
 import cn.weichejian.model.MpAccount;
@@ -21,7 +20,7 @@ public class MpAccountsInfoController extends Controller {
 			List<MpAccount> mpAccounts = MpAccount.dao.find("select * from t_mp_account where user_id=?",user.get("id"));
 			if (mpAccounts.size() != 0) {
 				this.setSessionAttr("mpAccounts", mpAccounts);
-				this.render("/admin/mp/index.jsp");
+				this.render("/admin/accounts/mp/index.jsp");
 			} else {
 				this.redirect("/admin/mpadd");
 			}
