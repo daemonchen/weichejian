@@ -59,7 +59,7 @@
                                         	<td><%= mpAccount.get("mp_account_name") %></td>
                                         	<td><%= mpAccount.get("mp_type") %></td>
                                         	<td>weichejian</td>
-                                        	<td>http://localhost:8080/api/<%= mpAccount.get("user_id") %></td>
+                                        	<td>http://weichejian.eicp.net/api/<%= mpAccount.get("user_id") %></td>
                                         	</tr>
                                         <%
                                         }
