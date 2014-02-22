@@ -49,12 +49,8 @@
                                     <h3 class="box-title">绑定公众账号</h3>
                                 </div><!-- /.box-header -->
                                 <!-- form start -->
-                                <form  action="/admin/bind_mp" method="POST">
+                                <form  action="/admin/mpinfo" method="POST">
                                     <div class="box-body">
-                                        <div class="form-group">
-                                            <label>微信公众账号</label>
-                                            <input type="text" name="mp_account" class="form-control" id="" placeholder="微信公众账号">
-                                        </div>
                                         <div class="form-group">
                                             <label>公众账号名称</label>
                                             <input type="text" name="mp_account_name" class="form-control" id="" placeholder="公众账号名称">

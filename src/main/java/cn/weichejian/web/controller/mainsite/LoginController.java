@@ -27,7 +27,7 @@ public class LoginController extends Controller{
 	private void doLoginLog(User user){
 		try {
 			new LoginLog().set("user_id",user.get("id"))
-			.set("login_time", new Date())
+			.set("login_time", new Date().getTime())
 			.set("ip",getRequest().getRemoteAddr())
 			.save();
 			

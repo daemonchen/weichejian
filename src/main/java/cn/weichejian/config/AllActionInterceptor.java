@@ -6,16 +6,10 @@ import com.jfinal.aop.Interceptor;
 import com.jfinal.core.ActionInvocation;
 import com.jfinal.core.Controller;
 
-
-
 public class AllActionInterceptor implements Interceptor {
 	public void intercept(ActionInvocation ai){
-		Controller currentController = ai.getController();
-		String controllerKey = ai.getControllerKey();
-		String actionName = ai.getMethodName();
-		currentController.setSessionAttr("controllerName", controllerKey);
-		currentController.setSessionAttr("actionName", actionName);
-		setUerName(currentController);
+		ai.getController().setSessionAttr("controllerName", ai.getControllerKey());
+		setUerName(ai.getController());
 		ai.invoke();
 	}
 	

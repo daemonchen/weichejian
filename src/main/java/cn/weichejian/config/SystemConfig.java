@@ -1,5 +1,6 @@
 package cn.weichejian.config;
 
+import cn.weichejian.model.MpAccount;
 import cn.weichejian.model.LoginLog;
 import cn.weichejian.model.User;
 
@@ -44,6 +45,7 @@ public class SystemConfig extends JFinalConfig {
 		arp.setContainerFactory(new CaseInsensitiveContainerFactory(true));
 		arp.addMapping("t_user", User.class);
 		arp.addMapping("t_login_log", LoginLog.class);
+		arp.addMapping("t_mp_account", MpAccount.class);
 		me.add(arp);
 	}
 

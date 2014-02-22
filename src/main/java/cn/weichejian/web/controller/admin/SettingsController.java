@@ -14,33 +14,7 @@ import com.jfinal.plugin.activerecord.Page;
  * */
 
 public class SettingsController extends Controller {
-	public void index(){
-		this.render("/admin/index/index.jsp");
-	}
-	public void mp_info(){
-		//TODO if user has bind already,show user info page
-		this.render("bind_mp.jsp");
-	}
-	public void bind_mp(){
-		//TODO 把form提交改为ajax
-		User user = getSessionAttr("loginUser");
-		Boolean result;
-		try {
-			result = user.set("mp_account", getPara("mp_account"))
-					.set("mp_account_name", getPara("mp_account_name"))
-					.set("mp_type", getPara("mp_type"))
-					.update();
-			if(result){
-				redirect("/admin");
-			}else{
-				renderText("db error");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			// TODO: handle exception
-		}
-//		System.out.println(getPara("mp_type")); 
-	}
+	
 	public void show_change_pwd(){
 		render("change_pwd.jsp");
 	}

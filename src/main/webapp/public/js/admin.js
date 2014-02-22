@@ -434,17 +434,17 @@ $(function(){
 			}
 		});
 	};
-	$(".btn-primary").click(function(e){
-		e.preventDefault();
-		fieldNotNull = true;
-		$("#pwd_form .form-control").each(function(index,item){
-			if($(item).val() == ""){
-				fieldNotNull = false;
-			}
-		});
-		if(fieldNotNull){
-			doUpdateUserPwd($("#origin_pwd").val(),$("#new_pwd").val());
-		}
-		else{alert("密码不能为空");}
-	});
+//	$(".btn-primary").click(function(e){
+//		e.preventDefault();
+//		fieldNotNull = true;
+//		$("#pwd_form .form-control").each(function(index,item){
+//			if($(item).val() == ""){
+//				fieldNotNull = false;
+//			}
+//		});
+//		if(fieldNotNull){
+//			doUpdateUserPwd($("#origin_pwd").val(),$("#new_pwd").val());
+//		}
+//		else{alert("密码不能为空");}
+//	});
 });
