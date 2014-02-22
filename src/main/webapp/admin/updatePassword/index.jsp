@@ -67,7 +67,7 @@
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary">绑定</button>
+                                        <button type="submit" class="btn btn-primary" id="updatePassword">保存</button>
                                     </div>
                                 </form>
                             </div>

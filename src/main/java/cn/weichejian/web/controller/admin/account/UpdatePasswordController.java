@@ -1,32 +1,34 @@
-package cn.weichejian.web.controller.admin;
+package cn.weichejian.web.controller.admin.account;
 
-import java.util.List;
+
+import java.util.Date;
 
 import cn.weichejian.model.User;
 
+import com.jfinal.core.Controller;
+import com.jfinal.ext.interceptor.Restful;
+import com.jfinal.aop.Before;
 import com.jfinal.aop.ClearInterceptor;
 import com.jfinal.aop.ClearLayer;
-import com.jfinal.core.Controller;
-import com.jfinal.plugin.activerecord.Page;
 
-/*对应管理后台账号设置的controller
- * 其他的一级菜单，要写在独立controller里
- * */
-
-public class SettingsController extends Controller {
-	
-	public void show_change_pwd(){
-		render("change_pwd.jsp");
+public class UpdatePasswordController extends Controller{
+	@Before(Restful.class)
+	public void index(){
+		render("/admin/updatePassword/index.jsp");
 	}
+	
 	@ClearInterceptor(ClearLayer.ALL)
-	public void change_pwd(){
+	public void save(){
 		User user = getSessionAttr("loginUser");
 		if(user == null){
 			setAttr("failed", "请重新登录");
 		}
 		else{
 			if(user.get("password").equals(getPara("o_password"))){
-				Boolean result = user.set("password", getPara("n_password")).update();
+				Boolean result = user
+					.set("password", getPara("n_password"))
+					.set("modify_time", new Date().getTime())
+					.update();
 				if (result) {
 					setAttr("success", "更新成功");
 				} else{
@@ -39,4 +41,5 @@ public class SettingsController extends Controller {
 		}
 		renderJson();
 	}
+
 }

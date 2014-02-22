@@ -419,12 +419,13 @@ $(function(){
 $(function(){
 	var doUpdateUserPwd = function(o,n){
 		$.ajax({
-			url:"/admin/change_pwd",
+			url:"/admin/updatePassword",
 			type:"POST",
 			data:{o_password:o,n_password:n},
 			success:function(data){
 				if (data.success) {
 					alert(data.success);
+//					location.href = "/admin";
 				} else {
 					alert(data.failed);
 				}
@@ -434,17 +435,17 @@ $(function(){
 			}
 		});
 	};
-//	$(".btn-primary").click(function(e){
-//		e.preventDefault();
-//		fieldNotNull = true;
-//		$("#pwd_form .form-control").each(function(index,item){
-//			if($(item).val() == ""){
-//				fieldNotNull = false;
-//			}
-//		});
-//		if(fieldNotNull){
-//			doUpdateUserPwd($("#origin_pwd").val(),$("#new_pwd").val());
-//		}
-//		else{alert("密码不能为空");}
-//	});
+	$("#updatePassword").click(function(e){
+		e.preventDefault();
+		fieldNotNull = true;
+		$("#pwd_form .form-control").each(function(index,item){
+			if($(item).val() == ""){
+				fieldNotNull = false;
+			}
+		});
+		if(fieldNotNull){
+			doUpdateUserPwd($("#origin_pwd").val(),$("#new_pwd").val());
+		}
+		else{alert("密码不能为空");}
+	});
 });

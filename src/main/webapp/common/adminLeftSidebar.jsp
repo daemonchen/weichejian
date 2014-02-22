@@ -27,8 +27,8 @@
                     <li class= <%if(session.getAttribute("controllerName").equals("/admin/mpinfo")){%>active <%}%>>
                     	<a href="/admin/mpinfo" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 微信公众 账号</a>
                     </li>
-                    <li class= <%if(session.getAttribute("controllerName").equals("infdex")){%>active <%}%>>
-                    	<a href="/admin/show_change_pwd" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a>
+                    <li class= <%if(session.getAttribute("controllerName").equals("/admin/updatePassword")){%>active <%}%>>
+                    	<a href="/admin/updatePassword" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改密码</a>
                     </li>
                     <li class= <%if(session.getAttribute("controllerName").equals("show_usr_info")){%>active <%}%>>
                     	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a>

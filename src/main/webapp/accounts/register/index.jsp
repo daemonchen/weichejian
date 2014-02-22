@@ -17,7 +17,7 @@
     <img src="/public/images/logo.png" height="72" width="72">
     <h1>注册微车间</h1>
     <div>
-        <form action="." method="POST">
+        <form action="/register" method="POST">
             <input type='hidden' name='csrfmiddlewaretoken' value='GpfVAYNT0V2kB4TpWUgKoNiAK3LKZbz4' />
             <tr>
             	<th><label for="id_email">账号:</label></th>

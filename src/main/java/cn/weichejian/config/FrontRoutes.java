@@ -7,6 +7,7 @@ import cn.weichejian.web.controller.mainsite.RegisterController;
 import cn.weichejian.web.controller.mainsite.ResetController;
 import cn.weichejian.web.controller.wechat.WeChatController;
 import cn.weichejian.web.controller.admin.account.MpAccountsController;
+import cn.weichejian.web.controller.admin.account.UpdatePasswordController;
 
 import com.jfinal.config.Routes;
 
@@ -27,9 +28,9 @@ public class FrontRoutes extends Routes {
 	}
 
 	private void admin() {
-		add("/admin", AdminController.class);
 		add("/admin/mpinfo", MpAccountsController.class);
-//		add("/admin", SettingsController.class);
+		add("/admin/updatePassword", UpdatePasswordController.class);
+		add("/admin", AdminController.class);
 	}
 	
 	private void wechat() {
