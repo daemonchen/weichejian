@@ -14,8 +14,8 @@
             <li><a href="/admin"><%= session.getAttribute("user") %></a></li>
             
             <%}else{ %>
-            <li><a href="/accounts/login/">登录</a></li>
-            <li class="signup"><a href="/accounts/signup/" class="btn signup-link">注册</a></li>
+            <li><a href="/login/">登录</a></li>
+            <li class="signup"><a href="/register" class="btn signup-link">注册</a></li>
             <%} %>
             
         </ul>

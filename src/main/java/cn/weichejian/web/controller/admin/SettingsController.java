@@ -15,7 +15,7 @@ import com.jfinal.plugin.activerecord.Page;
 
 public class SettingsController extends Controller {
 	public void index(){
-		this.render("index.jsp");
+		this.render("/admin/index/index.jsp");
 	}
 	public void mp_info(){
 		//TODO if user has bind already,show user info page

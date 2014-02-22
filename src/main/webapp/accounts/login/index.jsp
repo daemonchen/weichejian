@@ -14,7 +14,7 @@
     <img src="/public/images/logo.png" height="72" width="72">
     <h1>登陆</h1>
     <hr>
-    <form action="/accounts" method="POST">
+    <form action="." method="POST">
         <input type='hidden' name='csrfmiddlewaretoken' value='' />
         <tr>
         	<th><label for="id_email">账号:</label></th>
@@ -25,10 +25,10 @@
 			<td><input id="id_password" name="password" placeholder="Password" type="password" /></td>
 		</tr>
         <input type="submit" class="btn btn-primary" value="Log in">
-        <a href="/accounts/passwordreset/" class="forgot" style="font-size:14px; padding:15px 0; color:#999; display:inline-block">忘记密码?</a>
+        <a href="/reset" class="forgot" style="font-size:14px; padding:15px 0; color:#999; display:inline-block">忘记密码?</a>
     </form>
 </div>
-<p class="small"><a href="/accounts/signup/">还没有账号？注册一个</a></p>
+<p class="small"><a href="/register">还没有账号？注册一个</a></p>
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8">

@@ -17,23 +17,23 @@
     <img src="/public/images/logo.png" height="72" width="72">
     <h1>注册微车间</h1>
     <div>
-        <form action="/accounts/signuppost" method="POST">
+        <form action="." method="POST">
             <input type='hidden' name='csrfmiddlewaretoken' value='GpfVAYNT0V2kB4TpWUgKoNiAK3LKZbz4' />
             <tr>
             	<th><label for="id_email">账号:</label></th>
-            	<td><input id="id_email" maxlength="75" name="email" placeholder="Email" type="text" /></td>
+            	<td><input id="id_email" maxlength="75" name="username" placeholder="账号" type="text" /></td>
             </tr>
 			<tr>
 				<th><label for="id_password">密码:</label></th>
 				<td>
-				<input id="id_password" name="password" placeholder="Password" type="password" />
+				<input id="id_password" name="password" placeholder="密码" type="password" />
 				<input id="id_invitation_key" name="invitation_key" type="hidden" /></td>
 			</tr>
             <p><input type="submit" value="Sign up" class="btn btn-primary"></p>
         </form>
     </div>
 </div>
-<p class="small"><a href="/accounts/login/">已经有账号了? 登陆</a></p>
+<p class="small"><a href="/login">已经有账号了? 登陆</a></p>
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8">
