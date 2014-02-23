@@ -33,22 +33,34 @@
                     <li class= <%if(session.getAttribute("controllerName").equals("/admin/userinfo")){%>active <%}%>>
                     	<a href="/admin/userinfo" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 修改个人信息</a>
                     </li>
-                    <li class= <%if(session.getAttribute("controllerName").equals("show_usr_permission")){%>active <%}%>>
-                    	<a href="/" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a>
+                    <li class= <%if(session.getAttribute("controllerName").equals("/admin/permission")){%>active <%}%>>
+                    	<a href="/admin/permission" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 查看权限</a>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="/">
-                    <i class="fa fa-calendar"></i> <span>基础模块</span>
-                    <small class="badge pull-right bg-red">3</small>
+            <li class="treeview <%if(session.getAttribute("controllerName").toString().contains("modules/")){%>active <%}%>">
+                <a href="#">
+                    <i class="fa fa-gears"></i>
+                    <span>基础模块</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
+                <ul class="treeview-menu">
+                    <li class= <%if(session.getAttribute("controllerName").equals("/modules/welcome")){%>active <%}%>>
+                    	<a href="/modules/welcome" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 关注时回复</a>
+                    </li>
+                </ul>
             </li>
-            <li>
-                <a href="/">
-                    <i class="fa fa-envelope"></i> <span>微网站</span>
-                    <small class="badge pull-right bg-yellow">12</small>
+            <li class="treeview <%if(session.getAttribute("controllerName").toString().contains("mpsites/")){%>active <%}%>">
+                <a href="#">
+                    <i class="fa fa-sitemap"></i>
+                    <span>微网站</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
+                <ul class="treeview-menu">
+                    <li class= <%if(session.getAttribute("controllerName").equals("/mpsites/foundation")){%>active <%}%>>
+                    	<a href="/mpsites/foundation" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 基本设置</a>
+                    </li>
+                </ul>
             </li>
             
         </ul>

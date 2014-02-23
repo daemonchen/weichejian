@@ -10,6 +10,9 @@ import cn.weichejian.web.controller.admin.account.MpAccountsAddController;
 import cn.weichejian.web.controller.admin.account.MpAccountsInfoController;
 import cn.weichejian.web.controller.admin.account.UpdatePasswordController;
 import cn.weichejian.web.controller.admin.account.UserInfoController;
+import cn.weichejian.web.controller.admin.account.UserPermissionController;
+import cn.weichejian.web.controller.admin.modules.WelcomeController;
+import cn.weichejian.web.controller.admin.mpsites.MpsitesFoundationController;
 
 import com.jfinal.config.Routes;
 
@@ -20,6 +23,8 @@ public class FrontRoutes extends Routes {
 		this.mainsite();
 		this.admin();
 		this.wechat();
+		this.module();
+		this.mpsite();
 	}
 
 	private void mainsite() {
@@ -30,6 +35,7 @@ public class FrontRoutes extends Routes {
 	}
 
 	private void admin() {
+		add("/admin/permission", UserPermissionController.class);
 		add("/admin/userinfo", UserInfoController.class);
 		add("/admin/mpadd", MpAccountsAddController.class);
 		add("/admin/mpinfo", MpAccountsInfoController.class);
@@ -37,6 +43,13 @@ public class FrontRoutes extends Routes {
 		add("/admin", AdminController.class);
 	}
 	
+	private void module(){
+		add("/modules/welcome", WelcomeController.class);
+	}
+	
+	private void mpsite(){
+		add("/mpsites/foundation", MpsitesFoundationController.class);
+	}
 	private void wechat() {
 		add("/api", WeChatController.class);
 	}
