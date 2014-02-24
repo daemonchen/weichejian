@@ -46,7 +46,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class= <%if(session.getAttribute("controllerName").equals("/modules/welcome")){%>active <%}%>>
-                    	<a href="/modules/welcome" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 关注时回复</a>
+                    	<a href="/modules/welcome" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 被添加自动回复</a>
                     </li>
                 </ul>
             </li>
