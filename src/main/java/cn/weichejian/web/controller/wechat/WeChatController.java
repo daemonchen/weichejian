@@ -6,7 +6,11 @@ import java.util.Set;
 
 import org.jdom.JDOMException;
 
+import com.jfinal.aop.Before;
+import com.jfinal.aop.ClearInterceptor;
+import com.jfinal.aop.ClearLayer;
 import com.jfinal.core.Controller;
+import com.jfinal.ext.interceptor.Restful;
 import com.wechat.sdk.WeiXin;
 import com.wechat.sdk.vo.recv.WxRecvEventMsg;
 import com.wechat.sdk.vo.recv.WxRecvMsg;
@@ -19,26 +23,38 @@ import com.wechat.sdk.vo.send.WxSendTextMsg;
 public class WeChatController extends Controller {
 
 	final String TOKEN = "weichejian";
-
+	
+	@ClearInterceptor(ClearLayer.ALL)
 	public void index() {
-		String signature = getPara("signature");
-		String timestamp = getPara("timestamp");
-		String nonce = getPara("nonce");
-		String echostr = getPara("echostr");
+		String urlPara = this.getPara(0);
+		//因为要使用urlPara，所以这里不能使用restful接口
+		//TODO make sure this user doesn't bind weixin yet;
+		System.out.println("-------------------" + urlPara);
+		String signature = this.getPara("signature");
+		String timestamp = this.getPara("timestamp");
+		String nonce = this.getPara("nonce");
+		String echostr = this.getPara("echostr");
 		
-		renderNull();
 		if(null != timestamp && null != nonce && null != echostr && null != signature) {
 			if(WeiXin.access(TOKEN, signature, timestamp, nonce)) {
-				renderHtml(echostr);
-				return;
+				this.renderText(echostr);
 			}
-			return;
+			else{
+				this.renderText("signature false");
+			}
+		}
+		else{
+			this.renderText("arguments error");
 		}
 		
+		
+	}
+	@ClearInterceptor(ClearLayer.ALL)
+	public void save(){
 		try {
 			WxRecvMsg msg = WeiXin.recv(getRequest().getInputStream());
 			WxSendMsg sendMsg = WeiXin.builderSendByRecv(msg);
-			
+			//TODO use map instead of if else stuff
 			if(msg instanceof WxRecvEventMsg) {
 				WxRecvEventMsg m = (WxRecvEventMsg) msg;
 				String event = m.getEvent();
@@ -67,7 +83,7 @@ public class WeChatController extends Controller {
 					sendMsg = new WxSendTextMsg(sendMsg, content);
 					
 				} else if("2".equals(text)) {
-					sendMsg = new WxSendMusicMsg(sendMsg, "夜夜夜夜","林志�",
+					sendMsg = new WxSendMusicMsg(sendMsg, "夜夜夜夜","林志�",
 							"http://hugemaxiao.co/COFFdD0xMzY1Njg5NTIyJmk9MTIxLjM0LjMxLjMmdT1Tb25ncy92MS9mYWludFFDLzQ3LzkxMGFlM2JjMzM5MDNlZGI3NmY3MDUzY2ZjZDI1YjQ3Lm1wMyZtPTMzMWQwNGY2YTNkNTRiNTMwYzc1MjhkN2FmNDRhMGZjJnY9ZG93biZuPdK50rnSudK5JnM9wdbWvuzFJnA9cw==.mp3", 
 							"http://hugemaxiao.co/COFFdD0xMzY1Njg5NTIyJmk9MTIxLjM0LjMxLjMmdT1Tb25ncy92MS9mYWludFFDLzQ3LzkxMGFlM2JjMzM5MDNlZGI3NmY3MDUzY2ZjZDI1YjQ3Lm1wMyZtPTMzMWQwNGY2YTNkNTRiNTMwYzc1MjhkN2FmNDRhMGZjJnY9ZG93biZuPdK50rnSudK5JnM9wdbWvuzFJnA9cw==.mp3");
 				} else if("3".equals(text)) {
