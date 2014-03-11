@@ -452,16 +452,16 @@ $(function(){
 	/*
 	 * store auto reply text*/
 	
-	var senAutoReplyContent = function(){
+	var senAutoReplyContent = function(url,method,data){
 		$.ajax({
-			url:"/admin/updatePassword",
-			type:"POST",
-			data:{o_password:o,n_password:n},
-			success:function(data){
-				if (data.success) {
-					alert(data.success);
+			url:url,
+			type:method,
+			data:data,
+			success:function(e){
+				if (e.success) {
+					alert(e.success);
 				} else {
-					alert(data.failed);
+					alert(e.failed);
 				}
 			},
 			error:function(xhr,status,err){
@@ -471,11 +471,11 @@ $(function(){
 	}
 	$("#welcome-pannel .js_textArea .js_editorArea").click(function(){
 		var remainTextNumber = 600 - $(this).html().length
-		$("#welcome-pannel .js_editorTip em").html(remainTextNumber)
+		$("#welcome-pannel .js_editorTip em").html(remainTextNumber);
 	});
 	$("#welcom-auto-reply-text").click(function(){
 		var content = $("#welcome-pannel .js_textArea .js_editorArea").html();
-		sendAutoReplyText()
+//		sendAutoReplyText()
 		
 		console.log("---------------content:",content);
 	});

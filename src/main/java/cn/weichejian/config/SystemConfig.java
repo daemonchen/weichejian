@@ -1,6 +1,7 @@
 package cn.weichejian.config;
 
 import cn.weichejian.model.MpAccount;
+import cn.weichejian.model.AutoReplySetting;
 import cn.weichejian.model.LoginLog;
 import cn.weichejian.model.User;
 
@@ -46,6 +47,7 @@ public class SystemConfig extends JFinalConfig {
 		arp.addMapping("t_user", User.class);
 		arp.addMapping("t_login_log", LoginLog.class);
 		arp.addMapping("t_mp_account", MpAccount.class);
+		arp.addMapping("t_auto_reply_setting", AutoReplySetting.class);
 		me.add(arp);
 	}
 

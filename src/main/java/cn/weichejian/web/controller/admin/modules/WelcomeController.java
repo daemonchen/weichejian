@@ -23,19 +23,6 @@ public class WelcomeController extends Controller {
 	}
 	@ClearInterceptor(ClearLayer.ALL)
 	public void save(){
-		//TODO 把form提交改为ajax
-		User user = getSessionAttr("loginUser");
-		try {
-			new MpAccount().set("user_id", user.get("id"))
-				.set("mp_account_name", getPara("mp_account_name"))
-				.set("mp_type", getPara("mp_type"))
-				.set("create_time", new Date().getTime())
-				.save();
-			redirect("/admin");
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			// TODO: handle exception
-		}
+		
 	}
 }

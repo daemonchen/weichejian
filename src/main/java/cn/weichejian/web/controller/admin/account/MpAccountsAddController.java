@@ -28,6 +28,11 @@ public class MpAccountsAddController extends Controller {
 				.set("mp_type", getPara("mp_type"))
 				.set("create_time", new Date().getTime())
 				.save();
+			//激活当前微信账号
+			MpAccount mpAccount = MpAccount.dao.findFirst("");
+			user.set("mp_account_id",mpAccount.get("id"))
+			.set("modify_time", new Date().getTime())
+			.update();
 			redirect("/admin");
 			
 		} catch (Exception e) {
