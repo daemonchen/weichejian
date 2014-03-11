@@ -29,7 +29,7 @@ public class MpAccountsAddController extends Controller {
 				.set("create_time", new Date().getTime())
 				.save();
 			//激活当前微信账号
-			MpAccount mpAccount = MpAccount.dao.findFirst("");
+			MpAccount mpAccount = MpAccount.dao.findFirst("select * from t_mp_account where user_id=? and mp_account_name=? and mp_type=? ",user.get("id"),getPara("mp_account_name"),getPara("mp_type"));
 			user.set("mp_account_id",mpAccount.get("id"))
 			.set("modify_time", new Date().getTime())
 			.update();

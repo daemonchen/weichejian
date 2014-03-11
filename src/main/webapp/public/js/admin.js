@@ -469,14 +469,24 @@ $(function(){
 			}
 		});
 	}
+	var replyFunctionMap = {
+			"1":function(){//文本自动回复
+				var content = $("#welcome-pannel .js_textArea .js_editorArea").html();
+				var data = {"message_type":1,"content":content}
+				senAutoReplyContent("/modules/welcome","POST",data);
+			},
+			"2":function(){//图片自动回复
+				
+			}
+	}
 	$("#welcome-pannel .js_textArea .js_editorArea").click(function(){
 		var remainTextNumber = 600 - $(this).html().length
 		$("#welcome-pannel .js_editorTip em").html(remainTextNumber);
 	});
+	
 	$("#welcom-auto-reply-text").click(function(){
-		var content = $("#welcome-pannel .js_textArea .js_editorArea").html();
-//		sendAutoReplyText()
+		var msgType = 1;//TODO change this value when switch tab;
+		replyFunctionMap[msgType]();
 		
-		console.log("---------------content:",content);
 	});
 });
