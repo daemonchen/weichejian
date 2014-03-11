@@ -22,6 +22,7 @@ public class MpAccountsAddController extends Controller {
 		//TODO 把form提交改为ajax
 		User user = getSessionAttr("loginUser");
 		try {
+			// TODO 做去重检查
 			new MpAccount().set("user_id", user.get("id"))
 				.set("mp_account_name", getPara("mp_account_name"))
 				.set("mp_type", getPara("mp_type"))

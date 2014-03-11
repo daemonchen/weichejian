@@ -413,10 +413,10 @@ $(function(){
 	
 });
 
-/*
- *Do something to update user's pwd 
- */
 $(function(){
+	/*
+	 *Do something to update user's pwd 
+	 */
 	var doUpdateUserPwd = function(o,n){
 		$.ajax({
 			url:"/admin/updatePassword",
@@ -447,5 +447,36 @@ $(function(){
 			doUpdateUserPwd($("#origin_pwd").val(),$("#new_pwd").val());
 		}
 		else{alert("密码不能为空");}
+	});
+	
+	/*
+	 * store auto reply text*/
+	
+	var senAutoReplyContent = function(){
+		$.ajax({
+			url:"/admin/updatePassword",
+			type:"POST",
+			data:{o_password:o,n_password:n},
+			success:function(data){
+				if (data.success) {
+					alert(data.success);
+				} else {
+					alert(data.failed);
+				}
+			},
+			error:function(xhr,status,err){
+				console.log("update pwd occur error:",err);
+			}
+		});
+	}
+	$("#welcome-pannel .js_textArea .js_editorArea").click(function(){
+		var remainTextNumber = 600 - $(this).html().length
+		$("#welcome-pannel .js_editorTip em").html(remainTextNumber)
+	});
+	$("#welcom-auto-reply-text").click(function(){
+		var content = $("#welcome-pannel .js_textArea .js_editorArea").html();
+		sendAutoReplyText()
+		
+		console.log("---------------content:",content);
 	});
 });
