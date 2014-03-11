@@ -11,6 +11,7 @@ import cn.weichejian.web.controller.admin.account.MpAccountsInfoController;
 import cn.weichejian.web.controller.admin.account.UpdatePasswordController;
 import cn.weichejian.web.controller.admin.account.UserInfoController;
 import cn.weichejian.web.controller.admin.account.UserPermissionController;
+import cn.weichejian.web.controller.admin.modules.KeyWordsController;
 import cn.weichejian.web.controller.admin.modules.WelcomeController;
 import cn.weichejian.web.controller.admin.mpsites.MpsitesFoundationController;
 
@@ -45,6 +46,7 @@ public class FrontRoutes extends Routes {
 	
 	private void module(){
 		add("/modules/welcome", WelcomeController.class);
+		add("/modules/keywords", KeyWordsController.class);
 	}
 	
 	private void mpsite(){

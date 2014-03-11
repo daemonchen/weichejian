@@ -63,7 +63,7 @@
 	</ul>
 	<div class="tab_panel">
 	    
-	    <div class="tab_content" id="welcome-pannel">
+	    <div class="tab_content" id="keywords-pannel">
 	    	<div class="js_textArea inner no_extra">
 		    	<div class="emotion_editor">
 				    <div class="edit_area js_editorArea" contenteditable="true" style="overflow-y: auto; overflow-x: hidden;"></div>
@@ -611,7 +611,7 @@
 </div>
 </div>
                              <div class="box-footer">
-                                  <button class="btn btn-info" id="welcom-auto-reply-text">
+                                  <button class="btn btn-info" id="keywords-auto-reply-text">
                                   	<i class="fa fa-edit"></i>
                                    	保存
                                    </button>
@@ -630,7 +630,8 @@
 <script src="/public/js/bootstrap.js" type="text/javascript" charset="utf-8"></script> 
 
 <script src="/public/js/admin.js" type="text/javascript" charset="utf-8"></script> 
-<script src="/public/js/welcome.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/js/keywords.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
 </html>
 

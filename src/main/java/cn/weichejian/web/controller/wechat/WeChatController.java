@@ -10,6 +10,9 @@ import javax.servlet.ServletOutputStream;
 
 import org.jdom.JDOMException;
 
+import cn.weichejian.model.AutoReplySetting;
+import cn.weichejian.model.User;
+
 import com.jfinal.aop.Before;
 import com.jfinal.aop.ClearInterceptor;
 import com.jfinal.aop.ClearLayer;
@@ -56,15 +59,16 @@ public class WeChatController extends Controller {
 			ServletOutputStream res = getResponse().getOutputStream();
 			WxRecvMsg msg = WeiXin.recv(req);
 			WxSendMsg sendMsg = WeiXin.builderSendByRecv(msg);
+			User user = User.dao.findById(userId);
 			//TODO use map instead of if else stuff
 			if(msg instanceof WxRecvEventMsg) {
-				this.handleEventMsg(msg,sendMsg,res);
+				this.handleEventMsg(msg, sendMsg, user, res);
 			}
 			
 			if(msg instanceof WxRecvTextMsg) {
-				this.handleKeyWordTextMsg(msg, sendMsg, res);
+				this.handleKeyWordTextMsg(msg, sendMsg, user, res);
 				
-			}  else {
+			}  else {//TODO
 				String content = "1. 菜单\n2.音乐\n,3.图文\n";
 				sendMsg = new WxSendTextMsg(sendMsg, content);
 				WeiXin.send(sendMsg, getResponse().getOutputStream());
@@ -77,22 +81,32 @@ public class WeChatController extends Controller {
 		}
 	}
 	
-	private void handleEventMsg(WxRecvMsg msg,WxSendMsg sendMsg,ServletOutputStream res) throws JDOMException, IOException{
+	private void handleEventMsg(WxRecvMsg msg, 
+			WxSendMsg sendMsg,
+			User user,
+			ServletOutputStream res) throws JDOMException, IOException{
 		WxRecvEventMsg m = (WxRecvEventMsg) msg;
 		String event = m.getEvent();
 		if("subscribe".equals(event)) {
-			String content = "感谢关注";//TODO select content from t_auto_reply_setting where reply_type=1 and user_id=userId
+			String sql = "select * from t_auto_reply_setting where user_id=? and mp_account_id=? and reply_type=1";
+			String content = AutoReplySetting.dao
+					.findFirst(sql,user.get("id"),user.get("mp_account_id"))
+					.get("content");
 			sendMsg = new WxSendTextMsg(sendMsg, content);
 			WeiXin.send(sendMsg, res);
 		}
 	}
 	
-	private void handleKeyWordTextMsg(WxRecvMsg msg,WxSendMsg sendMsg,ServletOutputStream res) throws JDOMException, IOException{
+	private void handleKeyWordTextMsg(WxRecvMsg msg,
+			WxSendMsg sendMsg,
+			User user,
+			ServletOutputStream res) throws JDOMException, IOException{
+//		String sql = "select * from t_auto_reply_setting where user_id=? and mp_account_id=? and reply_type=1";
 		WxRecvTextMsg m = (WxRecvTextMsg) msg;
 		String text = m.getContent();
 		if(null != text) 
 			text = text.trim();
-		int msgType = this.getRecvMsgType();
+		int msgType = this.getResMsgType();
 		/*TODO select key_words from t_auto_reply_setting where user_id=userId, 
 		 * and check the result contain text from request, 
 		otherwise return default content as reply_type is 2.*/
@@ -121,7 +135,7 @@ public class WeChatController extends Controller {
 		return;
 	}
 	
-	private int getRecvMsgType(){
+	private int getResMsgType(){
 		//TODO select message_type from t_auto_reply_setting where user_id=userId and key_words=keywords 
 		return 2;
 	}

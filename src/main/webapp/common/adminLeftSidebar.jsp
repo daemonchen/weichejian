@@ -48,6 +48,9 @@
                     <li class= <%if(session.getAttribute("controllerName").equals("/modules/welcome")){%>active <%}%>>
                     	<a href="/modules/welcome" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 被添加自动回复</a>
                     </li>
+                    <li class= <%if(session.getAttribute("controllerName").equals("/modules/keywords")){%>active <%}%>>
+                    	<a href="/modules/keywords" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> 关键字回复</a>
+                    </li>
                 </ul>
             </li>
             <li class="treeview <%if(session.getAttribute("controllerName").toString().contains("mpsites/")){%>active <%}%>">
